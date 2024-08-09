@@ -5,12 +5,16 @@ using UnityEngine;
 public class PlayerLOgic : MonoBehaviour
 {
     public Vector2 inputVec;
-    Rigidbody2D rigid;
     public float speed;
+    Rigidbody2D rigid;
+    SpriteRenderer spriter;
+    Animator anim;
 
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
+        spriter = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
     }
 
    
@@ -23,5 +27,11 @@ public class PlayerLOgic : MonoBehaviour
     {
        Vector2 nextVec = inputVec.normalized*speed*Time.fixedDeltaTime;
         rigid.MovePosition(rigid.position + nextVec);
+    }
+    private void LateUpdate()
+    {
+        if (inputVec.x !=0){
+            spriter.flipX = inputVec.x < 0;
+        }
     }
 }
