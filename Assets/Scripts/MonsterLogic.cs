@@ -68,8 +68,7 @@ public class MonsterLogic : MonoBehaviour
     {
         if (!collision.CompareTag("Weapons"))
             return;
-        Dead();
-        health -= collision.GetComponent<Bullet>().damage = 0;
+        health -= collision.GetComponent<Bullet>().damage;
 
         if (health > 0)
         {
