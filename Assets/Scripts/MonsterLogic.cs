@@ -79,10 +79,26 @@ public class MonsterLogic : MonoBehaviour
         Vector3 playerPos = GameManager.instance.player.transform.position;
         Vector3 dirvec = transform.position - playerPos;
         rigid.AddForce(dirvec.normalized * 3, ForceMode2D.Impulse);
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (!collision.CompareTag("Weapons"))
+            return;
+        Dead();
+      // health -= collision.GetComponent<Bullet>().damage = 0;
+      /*
+       if (health > 0 ) {
+        // Live hit action
+       }
+      else {
+        // ..Die
+        Dead();
+      }
+      */
     }
 
     void Dead()
     {
         gameObject.SetActive(false);
     }*/
+    }
 }
