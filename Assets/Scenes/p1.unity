@@ -264,6 +264,55 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: []
+  spawnData:
+  - spawnTime: 0
+    spriteType: 0
+    health: 0
+    speed: 0
+  - spawnTime: 0
+    spriteType: 0
+    health: 0
+    speed: 0
+  - spawnTime: 0
+    spriteType: 0
+    health: 0
+    speed: 0
+  - spawnTime: 0
+    spriteType: 0
+    health: 0
+    speed: 0
+  - spawnTime: 0
+    spriteType: 0
+    health: 0
+    speed: 0
+  - spawnTime: 0
+    spriteType: 0
+    health: 0
+    speed: 0
+  - spawnTime: 0
+    spriteType: 0
+    health: 0
+    speed: 0
+  - spawnTime: 0
+    spriteType: 0
+    health: 0
+    speed: 0
+  - spawnTime: 0
+    spriteType: 0
+    health: 0
+    speed: 0
+  - spawnTime: 0
+    spriteType: 0
+    health: 0
+    speed: 0
+  - spawnTime: 0
+    spriteType: 0
+    health: 0
+    speed: 0
+  - spawnTime: 0
+    spriteType: 0
+    health: 0
+    speed: 0
 --- !u!1 &504036206
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,7 +505,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 5.671875
+  orthographic size: 4.28125
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -749,6 +798,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabs:
   - {fileID: 6052803495680944460, guid: 73743ffd7f02a7c46b4621ebe69b2d79, type: 3}
+  - {fileID: 6706089700811833593, guid: 90366c4799014b34bb67e8c3504e15da, type: 3}
+  - {fileID: 8746174753918809183, guid: a72de2ff7a664d64881b6619d40dce3b, type: 3}
+  - {fileID: 5213562160286082897, guid: 08c026226d97c2048b32e11410c7cda7, type: 3}
+  - {fileID: 4064674298577321673, guid: 4d2960d45bc7734458ec63ddd9990e94, type: 3}
+  - {fileID: 5080539595683703247, guid: 98aad01b48a0af545a3a33ba87c921c3, type: 3}
+  - {fileID: 4263970308786563529, guid: f4385febd18dae8408fb2b5af1c5f28a, type: 3}
+  - {fileID: 137553815955919721, guid: 6bea3353be114964eaa9405eb9676d3d, type: 3}
+  - {fileID: 3526121336633320634, guid: ae530ba67b037b7438ab5330ee2c6da2, type: 3}
+  - {fileID: 7878970144622666280, guid: 93234b182c0650e45ac77897ebd79622, type: 3}
+  - {fileID: 3469296923199581688, guid: e3ae5ccb565d1934db6d463e50e38641, type: 3}
+  - {fileID: 8556255376154251236, guid: 657d8bde28b36be42bcb1bdb174585ad, type: 3}
 --- !u!4 &1023177070
 Transform:
   m_ObjectHideFlags: 0
