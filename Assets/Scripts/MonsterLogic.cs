@@ -56,11 +56,11 @@ public class MonsterLogic : MonoBehaviour
         health = data.health;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+   /* private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (false/*!collision.CompareTag("")*/)
+        if (!collision.CompareTag("Bullet"))
             return;
-        //health -= collison.GetComponent<>().damage;
+        health -= collison.GetComponent<Bullet>().damage;
         StartCoroutine(KnockBack());
 
         if(health > 0)
@@ -84,5 +84,5 @@ public class MonsterLogic : MonoBehaviour
     void Dead()
     {
         gameObject.SetActive(false);
-    }
+    }*/
 }
