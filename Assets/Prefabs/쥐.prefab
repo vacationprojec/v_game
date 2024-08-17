@@ -163,6 +163,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+  health: 0
+  maxHealth: 0
   target: {fileID: 0}
 --- !u!95 &3868703205035255996
 Animator:

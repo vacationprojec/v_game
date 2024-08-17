@@ -27,7 +27,7 @@ public class MonsterLogic : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (!isLive )
+        if (!isLive)
             return;
         Vector2 dirVec = target.position - rigid.position;
         Vector2 nextVec = dirVec.normalized * speed * Time.fixedDeltaTime;
@@ -56,22 +56,6 @@ public class MonsterLogic : MonoBehaviour
         health = data.health;
     }
 
-   /* private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (!collision.CompareTag("Bullet"))
-            return;
-        health -= collison.GetComponent<Bullet>().damage;
-        StartCoroutine(KnockBack());
-
-        if(health > 0)
-        {
-
-        }
-        else
-        {
-            Dead();
-        }
-    }
 
     IEnumerator KnockBack()
     {
@@ -79,26 +63,30 @@ public class MonsterLogic : MonoBehaviour
         Vector3 playerPos = GameManager.instance.player.transform.position;
         Vector3 dirvec = transform.position - playerPos;
         rigid.AddForce(dirvec.normalized * 3, ForceMode2D.Impulse);
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!collision.CompareTag("Weapons"))
             return;
         Dead();
-      // health -= collision.GetComponent<Bullet>().damage = 0;
-      /*
-       if (health > 0 ) {
-        // Live hit action
-       }
-      else {
-        // ..Die
-        Dead();
-      }
-      */
+        health -= collision.GetComponent<Bullet>().damage = 0;
+
+        if (health > 0)
+        {
+            // Live hit action
+        }
+        else
+        {
+            // ..Die
+            Dead();
+        }
+
     }
-/*
+
     void Dead()
     {
         gameObject.SetActive(false);
-    }*/
+       }
+}
 
 

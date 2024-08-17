@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 2269503652863272603}
   - component: {fileID: 7053191956092848975}
   - component: {fileID: 1996293339652490980}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: "\uB2ED"
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
