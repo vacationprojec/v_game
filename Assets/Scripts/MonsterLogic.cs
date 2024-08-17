@@ -95,10 +95,10 @@ public class MonsterLogic : MonoBehaviour
       }
       */
     }
-
+/*
     void Dead()
     {
         gameObject.SetActive(false);
     }*/
-    }
-}
+
+
