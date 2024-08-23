@@ -99,6 +99,37 @@ public class MonsterLogic : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (!collision.CompareTag("Weapons"))
+            return;
+        Dead();
+        health -= collision.GetComponent<Bullet>().damage = 0;
+
+        if (health > 0)
+        {
+            // Live hit action
+        }
+        else
+        {
+            // ..Die
+            Dead();
+        }
+
+    }
+public void TakeDamage(int damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            Dead();
+        }
+    }
+    void Dead()
+    {
+        gameObject.SetActive(false);
+       }
+   
 }
 
 
