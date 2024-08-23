@@ -95,28 +95,6 @@ public class MonsterLogic : MonoBehaviour
         rigid.AddForce(dirvec.normalized * 3, ForceMode2D.Impulse);
     }
 
-    void Dead()
-    {
-        gameObject.SetActive(false);
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (!collision.CompareTag("Weapons"))
-            return;
-        Dead();
-        health -= collision.GetComponent<Bullet>().damage = 0;
-
-        if (health > 0)
-        {
-            // Live hit action
-        }
-        else
-        {
-            // ..Die
-            Dead();
-        }
-
-    }
 public void TakeDamage(int damage)
     {
         health -= damage;

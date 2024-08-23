@@ -447,7 +447,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackRange: 8
-  attackCooldown: 1
+  attackCooldown: 0.01
   bulletPrefab: {fileID: 5714332169019537389, guid: 4c539ae651f8eb54e87efae396816e2b, type: 3}
   firePoint: {fileID: 402189835}
 --- !u!1 &504036206
@@ -642,7 +642,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 4.28125
+  orthographic size: 8.40625
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
