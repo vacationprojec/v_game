@@ -29,13 +29,17 @@ public class Weapon : MonoBehaviour
             case 0:
                 transform.Rotate(Vector3.back * speed * Time.deltaTime);
                 break;
-            default:
+            case 1:
+            
                 timer += Time.deltaTime;
                 if(timer > speed)
                 {
                     timer = 0f;
                     Fire();
                 }
+                break;
+            default:
+                Shake();
                 break;
         }
 
@@ -60,8 +64,11 @@ public class Weapon : MonoBehaviour
                 speed = 150;
                 Batch();
                 break;
-            default:
+            case 1:
                 speed = 0.3f;
+                break;
+            default:
+                
                 break;
         }
     }
@@ -104,5 +111,21 @@ public class Weapon : MonoBehaviour
         bullet.position = transform.position;
         bullet.rotation = Quaternion.FromToRotation(Vector3.up, dir);
         bullet.GetComponent<Bullet>().Init(damage, count, dir);
+    }
+
+    void Shake()
+    {
+        if (Time.time >=  timer + speed)
+        {
+            timer = Time.time;
+            gameObject.GetComponentInChildren<BoxCollider2D>().enabled = true;
+
+            Invoke("EndShake", 0.1f);
+        }
+
+    }
+    void EndShake()
+    {
+        gameObject.GetComponentInChildren<BoxCollider2D>().enabled = false;
     }
 }
