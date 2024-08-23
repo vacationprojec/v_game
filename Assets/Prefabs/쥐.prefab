@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5223607301072960333}
   - component: {fileID: 5868990022179541274}
   - component: {fileID: 5859693638421828709}
-  - component: {fileID: 3868703205035255996}
+  - component: {fileID: 6884376719579690989}
   m_Layer: 6
   m_Name: "\uC950"
   m_TagString: Enemy
@@ -166,7 +166,7 @@ MonoBehaviour:
   health: 0
   maxHealth: 0
   target: {fileID: 0}
---- !u!95 &3868703205035255996
+--- !u!95 &6884376719579690989
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -176,7 +176,7 @@ Animator:
   m_GameObject: {fileID: 6052803495680944460}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: dee0d76104274dd4bb73737686a04829, type: 2}
+  m_Controller: {fileID: 9100000, guid: 0f538f931e1ddae47b5b70aa05ee02ca, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
