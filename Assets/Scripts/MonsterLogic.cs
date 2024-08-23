@@ -13,12 +13,14 @@ public class MonsterLogic : MonoBehaviour
     bool isLive;
 
     Rigidbody2D rigid;
+    Collider2D coll;
     SpriteRenderer spriter;
     Animator anim;
 
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
+        coll = GetComponent<Collider2D>();
         anim = GetComponent<Animator>();
         spriter = GetComponent<SpriteRenderer>();
         wait = new WaitForFixedUpdate();
@@ -27,8 +29,9 @@ public class MonsterLogic : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (!isLive)
+        if (!isLive||anim.GetCurrentAnimatorStateInfo(0).IsName("Hit"))
             return;
+
         Vector2 dirVec = target.position - rigid.position;
         Vector2 nextVec = dirVec.normalized * speed * Time.fixedDeltaTime;
         rigid.MovePosition(rigid.position + nextVec);
@@ -46,6 +49,10 @@ public class MonsterLogic : MonoBehaviour
     {
         target = GameManager.instance.player.GetComponent<Rigidbody2D>();
         isLive = true;
+        coll.enabled = true;
+        rigid.simulated = true;
+        spriter.sortingOrder = 2;
+        anim.SetBool("Dead", false);
         health = maxHealth;
     }
 
@@ -57,6 +64,29 @@ public class MonsterLogic : MonoBehaviour
     }
 
 
+    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (!collision.CompareTag("Weapons"))
+            return;
+        health -= collision.GetComponent<Bullet>().damage;
+        StartCoroutine(KnockBack());
+
+        if (health > 0)
+        {
+            anim.SetTrigger("Hit");
+        }
+        else
+        {
+            isLive = false;
+            coll.enabled = false;
+            rigid.simulated = false;
+            spriter.sortingOrder = 1;
+            anim.SetBool("Dead", true);
+        }
+
+    }
+
     IEnumerator KnockBack()
     {
         yield return wait;
@@ -64,29 +94,11 @@ public class MonsterLogic : MonoBehaviour
         Vector3 dirvec = transform.position - playerPos;
         rigid.AddForce(dirvec.normalized * 3, ForceMode2D.Impulse);
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (!collision.CompareTag("Weapons"))
-            return;
-        Dead();
-        health -= collision.GetComponent<Bullet>().damage = 0;
-
-        if (health > 0)
-        {
-            // Live hit action
-        }
-        else
-        {
-            // ..Die
-            Dead();
-        }
-
-    }
 
     void Dead()
     {
         gameObject.SetActive(false);
-       }
+    }
 }
 
 
